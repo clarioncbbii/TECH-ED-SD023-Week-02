@@ -4,21 +4,26 @@
 
 const imageData = [
   {
-    imageName: "value",
-    imageSrc: "external url OR local relative path",
-    imageAlt: "value",
+    imageName: "PHOTO 1",
+    imageSrc: "./assets/images/road-nigeria.webp",
+    imageAlt: "An aerial view of a road cutting through open land.",
   },
   {
-    imageName: "value",
-    imageSrc: "external url OR local relative path",
-    imageAlt: "value",
+    imageName: "PHOTO 2",
+    imageSrc: "./assets/images/trees-nigeria.webp",
+    imageAlt: "Green trees overlooking mountain during daytime",
   },
   {
-    imageName: "value",
-    imageSrc: "external url OR local relative path",
-    imageAlt: "value",
+    imageName: "PHOTO 3",
+    imageSrc: "./assets/images/waterfall-nigeria.webp",
+    imageAlt: "Waterfall in the middle of the forest",
   },
 ];
+
+console.log(imageData);
+
+//
+//
 
 //TODO - STEP 2: create thumbnail images
 // function createThumbnails() {
@@ -32,9 +37,26 @@ const imageData = [
 // - append the created images to the thumbnail-container
 // }
 
+function createThumbnails() {
+  const thumbnailContainer = document.getElementById("thumbnail-container");
+  for (let i = 0; i < imageData.length; i++) {
+    const currentImageData = imageData[i]; //MOVE TO CREATE GLOBAL SCOPE
+    const thumbnailImage = document.createElement("img");
+    thumbnailImage.src = currentImageData.imageSrc;
+    thumbnailImage.alt = currentImageData.imageAlt;
+    thumbnailImage.className = "thumbnail-image";
+    //   thumbnailImage.addEventListener("click", function (event){createFullscreenImages}; ????
+    thumbnailContainer.appendChild(thumbnailImage);
+  }
+}
+createThumbnails();
+
+//
+//
+
 //TODO - STEP 3: create fullscreen images
 // function createFullscreenImages() {
-//this the event handler
+//this is the event handler
 //select the fullscreen-container
 //delete the current fullscreen image
 // fullscreenContainer.innerHTML = "" OR null
@@ -43,6 +65,18 @@ const imageData = [
 //add className for styling (making the image full screen)
 //append the image to the container
 // }
+
+function createFullscreenImages() {
+  const fullscreenContainer = document.getElementById("fullscreen-container");
+  document.fullscreenContainer;
+  //delete image how?
+  fullscreenContainer.innerHTML = null;
+  const fullscreenImage = document.createElement("img");
+  fullscreenImageImage.src = currentImageData.imageSrc;
+  fullscreenImageImage.alt = currentImageData.imageAlt;
+  fullscreenImageImage.className = "fullscreen-image";
+  fullscreenContainer.appendChild(fullscreenImageImage);
+}
 
 //add the createFullscreenImages function as the event handler of the event above
 //call the createThumbnails function
