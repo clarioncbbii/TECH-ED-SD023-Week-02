@@ -1,0 +1,35 @@
+#thumbnail-container {
+  border-style: solid black 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  height: 5rem;
+  width: 7.5rem;
+}
+
+#fullscreen-container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
+
+#thumbnail-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  height: 60px;
+  width: auto;
+  bottom: 3vh;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  transform: translateX(
+    -50%
+  ); /* Shift the element left by 50% of its own width */
+  overflow: scroll;
+}
