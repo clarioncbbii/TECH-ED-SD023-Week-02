@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+button {
+  width: 3em;
+  height: 3em;
+  z-index: 100;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.125);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 button#previous {
   position: absolute;
   top: 50vh;
@@ -14,19 +27,6 @@ button#next {
   position: absolute;
   top: 50vh;
   right: 10vh;
-}
-
-button {
-  width: 5em;
-  height: 5em;
-  z-index: 100;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.125);
-  color: white;
-  border-color: rgba(255, 255, 255, 0.25);
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 1000;
 }
 
 button:hover {
@@ -43,7 +43,7 @@ button:hover {
   height: 8vw;
   width: 100vw;
   background-color: rgba(139, 139, 139, 0.1);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
   overflow: hidden;
   /* overflow-x: scroll; */
   /* overflow-y: hidden; Hide vertical scrollbar */
@@ -57,6 +57,20 @@ button:hover {
   height: 10vh;
   object-fit: cover;
   z-index: 100;
+}
+
+@media (width <= 600px) {
+  .thumbnail-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 10vh;
+    width: 100vh;
+    position: absolute;
+    top: 3vh;
+    bottom: auto;
+    overflow: scroll;
+  }
 }
 
 #fullscreen-container {
@@ -73,4 +87,16 @@ button:hover {
   grid-row-start: 1;
   grid-row-end: span 2;
   object-fit: cover;
+}
+
+@media (width <= 600px) {
+  .fullscreen-container {
+    width: 100vw;
+    height: 100vh;
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    object-fit: fill;
+  }
 }

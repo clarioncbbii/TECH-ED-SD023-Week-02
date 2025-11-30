@@ -5,44 +5,52 @@
 const imageData = [
   {
     imageName: "PHOTO 1",
-    imageSrc: "./assets/images/road-nigeria.webp",
+    imageSrcThumb: "./assets/images/road-nigeria-small.jpg",
+    imageSrcFull: "./assets/images/road-nigeria.webp",
     imageAlt: "An aerial view of a road cutting through open land.",
   },
   {
     imageName: "PHOTO 2",
-    imageSrc: "./assets/images/trees-nigeria.webp",
+    imageSrcThumb: "./assets/images/trees-nigeria-small.jpg",
+    imageSrcFull: "./assets/images/trees-nigeria.webp",
     imageAlt: "Green trees overlooking mountain during daytime",
   },
   {
     imageName: "PHOTO 3",
-    imageSrc: "./assets/images/waterfall-nigeria.webp",
+    imageSrcThumb: "./assets/images/waterfall-nigeria-small.jpg",
+    imageSrcFull: "./assets/images/waterfall-nigeria.webp",
     imageAlt: "Waterfall in the middle of the forest",
   },
   {
     imageName: "PHOTO 4",
-    imageSrc: "./assets/images/beach.webp",
+    imageSrcThumb: "./assets/images/beach-small.jpg",
+    imageSrcFull: "./assets/images/beach.webp",
     imageAlt:
       "Sandy beack in Lagos, Nigeria; people swimming in the ocean in the distance",
   },
   {
     imageName: "PHOTO 5",
-    imageSrc: "./assets/images/fruit.webp",
+    imageSrcThumb: "./assets/images/fruit-small.jpg",
+    imageSrcFull: "./assets/images/fruit.webp",
     imageAlt:
       "Fruit basket in the market containing Avocado, Agbalumo (African Star Apple; Pineapple in the background",
   },
   {
     imageName: "PHOTO 6",
-    imageSrc: "./assets/images/sunset.webp",
+    imageSrcThumb: "./assets/images/sunset-small.jpg",
+    imageSrcFull: "./assets/images/sunset.webp",
     imageAlt: "A sandy beach with waves crashing; Sunset at Elegushi beach",
   },
   {
     imageName: "PHOTO 7",
-    imageSrc: "./assets/images/pepper.webp",
+    imageSrcThumb: "./assets/images/pepper-small.jpg",
+    imageSrcFull: "./assets/images/pepper.webp",
     imageAlt: "Woman selling pepper watches over her wares in a market.",
   },
   {
     imageName: "PHOTO 8",
-    imageSrc: "./assets/images/village.webp",
+    imageSrcThumb: "./assets/images/village-small.jpg",
+    imageSrcFull: "./assets/images/village.webp",
     imageAlt:
       "An aerial view of a village in the middle of a forest in Nigeria",
   },
@@ -52,6 +60,22 @@ console.log(imageData);
 
 //
 //
+
+// TODO: I CAN'T MAKE THIS FRIGGIN' WORK!!!!!!!???????????
+//IMAGE TO BE DISPLAY ON WINDOW LOAD
+
+let thumbContainer = document.getElementById("thumb-container");
+let currentImageIndex = 0;
+const displayElem = document.getElementById("display");
+
+function init() {
+  // await fetchImages()
+  console.log(imageData);
+  updateDisplayImage(imageData[currentImageIndex]);
+  createThumbnails();
+}
+
+window.onload = init;
 
 //TODO - STEP 2: create thumbnail images
 // function createThumbnails() {
@@ -70,7 +94,7 @@ function createThumbnails() {
   for (let i = 0; i < imageData.length; i++) {
     const currentImageData = imageData[i];
     const thumbnailImage = document.createElement("img");
-    thumbnailImage.src = currentImageData.imageSrc;
+    thumbnailImage.src = currentImageData.imageSrcThumb;
     thumbnailImage.alt = currentImageData.imageAlt;
     thumbnailImage.className = "thumbnail-image";
     thumbnailImage.addEventListener("click", function () {
@@ -100,7 +124,7 @@ function createFullscreenImages(currentImageData) {
   const fullscreenContainer = document.getElementById("fullscreen-container");
   fullscreenContainer.innerHTML = null;
   const fullscreenImage = document.createElement("img");
-  fullscreenImage.src = currentImageData.imageSrc;
+  fullscreenImage.src = currentImageData.imageSrcFull;
   fullscreenImage.alt = currentImageData.imageAlt;
   fullscreenImage.className = "fullscreen-image";
   fullscreenContainer.appendChild(fullscreenImage);
@@ -109,10 +133,11 @@ function createFullscreenImages(currentImageData) {
 //add the createFullscreenImages function as the event handler of the event above
 //call the createThumbnails function
 
+// TODO: I CANNOT MAKE THIS FRIGGIN' WORK EITHER !!!!!!!???????????
+
 //TODO: Make the buttons clickable
 const prevBtn = document.getElementById("previous");
 const nextBtn = document.querySelector("next");
-let currentImageIndex = 0;
 
 // TODO: Next button
 // Need a function as addEventHandler
@@ -125,5 +150,23 @@ let currentImageIndex = 0;
 //      #EVENTHANDLER FUNCTION);
 //    });
 
+function selectNextImage(index) {
+  currentImageIndex += index;
+
+  if (currentImageIndex >= imageData.length) currentImageIndex = 0;
+  if (currentImageIndex < 0) currentImageIndex = imageData.length - 1;
+  console.log(currentImageIndex);
+  updateDisplayImage(imageData[currentImageIndex]);
+}
+
 //TODO: Previous button
 // Do opposite for previous button
+
+function selectPreviousImage(index) {
+  currentImageIndex += index;
+
+  if (currentImageIndex <= imageData.length) currentImageIndex = 0;
+  if (currentImageIndex > 0) currentImageIndex = imageData.length - 1;
+  console.log(currentImageIndex);
+  updateDisplayImage(imageData[currentImageIndex]);
+}
