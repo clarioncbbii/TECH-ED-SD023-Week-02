@@ -50,3 +50,18 @@ I think overall the most diffcult thing has been the learning curve - it has bee
 I am fairly happy with the site I produced; I think it is aesthetically pleasing and fit-for-purpose; I am just missing some functionality.
 
 Thank you Manny & Bartie on all the breakout session assistance :) Onwards & upwards!
+
+# REFERENCES/SOURCES
+
+For my images I used Unsplash photos stored locally - links below for reference:
+https://unsplash.com/photos/green-trees-overlooking-mountain-during-daytime-CTagSQHmQo0
+https://unsplash.com/photos/water-falls-in-the-middle-of-the-forest-bAqih12-g9A
+https://unsplash.com/photos/an-aerial-view-of-a-road-in-the-middle-of-a-field-TDBosVBVWAY
+https://unsplash.com/photos/man-in-white-long-sleeve-shirt-and-white-hat-standing-in-front-of-fruit-stand-ME416b6sp2I
+https://unsplash.com/photos/a-beach-with-people-in-the-water-and-buildings-in-the-background-KD3PPAv7VfY
+https://unsplash.com/photos/selective-focus-photography-of-displayed-fruits-SAzxVLbZWkk
+https://unsplash.com/photos/an-aerial-view-of-a-village-in-the-middle-of-a-forest-niElH29LKjw
+https://unsplash.com/photos/a-sandy-beach-with-waves-crashing-9tPD7yXgh8w
+
+For my favicon, I used Flaticon - link below:
+https://www.flaticon.com/free-icon/jungle_7630970?related_id=7630970
