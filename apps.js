@@ -58,24 +58,8 @@ const imageData = [
 
 console.log(imageData);
 
+// DONE!
 //
-//
-
-// TODO: I CAN'T MAKE THIS FRIGGIN' WORK!!!!!!!???????????
-//IMAGE TO BE DISPLAY ON WINDOW LOAD
-
-let thumbContainer = document.getElementById("thumb-container");
-let currentImageIndex = 0;
-const displayElem = document.getElementById("display");
-
-function init() {
-  // await fetchImages()
-  console.log(imageData);
-  updateDisplayImage(imageData[currentImageIndex]);
-  createThumbnails();
-}
-
-window.onload = init;
 
 //TODO - STEP 2: create thumbnail images
 // function createThumbnails() {
@@ -105,7 +89,7 @@ function createThumbnails() {
 }
 createThumbnails();
 
-//
+// DONE!
 //
 
 //TODO - STEP 3: create fullscreen images
@@ -133,11 +117,17 @@ function createFullscreenImages(currentImageData) {
 //add the createFullscreenImages function as the event handler of the event above
 //call the createThumbnails function
 
-// TODO: I CANNOT MAKE THIS FRIGGIN' WORK EITHER !!!!!!!???????????
+// DONE!
+//
+//
+//
 
+// TODO: I CANNOT MAKE THIS FRIGGIN' WORK!!!!!!!
+//
+//
 //TODO: Make the buttons clickable
 const prevBtn = document.getElementById("previous");
-const nextBtn = document.querySelector("next");
+const nextBtn = document.getElementById("next");
 
 // TODO: Next button
 // Need a function as addEventHandler
@@ -150,23 +140,36 @@ const nextBtn = document.querySelector("next");
 //      #EVENTHANDLER FUNCTION);
 //    });
 
-function selectNextImage(index) {
-  currentImageIndex += index;
-
-  if (currentImageIndex >= imageData.length) currentImageIndex = 0;
-  if (currentImageIndex < 0) currentImageIndex = imageData.length - 1;
-  console.log(currentImageIndex);
-  updateDisplayImage(imageData[currentImageIndex]);
-}
+nextBtn.addEventListener("click", function () {
+  const fullscreenContainer = document.getElementById("fullscreen-container");
+  for (let i = 1; i < imageData.length; i++);
+  fullscreenContainer.innerHTML = ImageData.imageSrcFull;
+});
+//
+//
+//
+//
 
 //TODO: Previous button
 // Do opposite for previous button
 
-function selectPreviousImage(index) {
-  currentImageIndex += index;
+//
+//
+//
+//
 
-  if (currentImageIndex <= imageData.length) currentImageIndex = 0;
-  if (currentImageIndex > 0) currentImageIndex = imageData.length - 1;
-  console.log(currentImageIndex);
-  updateDisplayImage(imageData[currentImageIndex]);
-}
+// TODO: I CANNOT MAKE THIS FRIGGIN' WORK EITHER!!!!!???????
+//IMAGE TO BE DISPLAY ON WINDOW LOAD
+
+// let thumbContainer = document.getElementById("thumb-container");
+// let currentImageIndex = 0;
+// const displayElem = document.getElementById("display");
+
+// function init() {
+// // await fetchImages()
+//   console.log(imageData);
+//   updateDisplayImage(imageData[currentImageIndex]);
+//   createThumbnails();
+// }
+
+// window.onload = init;
